@@ -3,6 +3,7 @@ DROP TABLE test;
 
 -- create empty table
 CREATE TABLE test (
-  id INTEGER,
-  name TEXT
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  city TEXT DEFAULT 'Moscow'
 );
