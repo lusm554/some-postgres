@@ -12,3 +12,6 @@ VALUES ('Ava');
 
 INSERT INTO test (name)
 VALUES ('Emma');
+
+INSERT INTO test (name)
+VALUES ('Sarah');
