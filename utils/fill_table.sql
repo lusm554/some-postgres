@@ -1,14 +1,14 @@
-INSERT INTO test (id, name)
-VALUES (1, 'Nikita');
+INSERT INTO test (name)
+VALUES ('Nikita');
 
-INSERT INTO test (id, name)
-VALUES (2, 'Liam');
+INSERT INTO test (name)
+VALUES ('Liam');
 
-INSERT INTO test (id, name)
-VALUES (3, 'Noah');
+INSERT INTO test (name)
+VALUES ('Noah');
 
-INSERT INTO test (id, name)
-VALUES (4, 'Ava');
+INSERT INTO test (name)
+VALUES ('Ava');
 
-INSERT INTO test (id, name)
-VALUES (5, 'Emma');
+INSERT INTO test (name)
+VALUES ('Emma');
