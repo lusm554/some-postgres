@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # RAW VERSION OF COMPILING SQL FILES
 #PGPASSWORD=lusm123
 #psql postgres -h 127.0.0.1 -d postgres -f test.sql
