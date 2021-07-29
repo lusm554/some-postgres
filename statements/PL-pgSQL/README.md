@@ -7,3 +7,16 @@ So, pgSQL:
 - PL/pgSQL inherits all user-defined types, functions, and operators.
 - PL/pgSQL has many features that allow you to develop complex functions and stored procedures.
 - PL/pgSQL can be defined to be trusted by the PostgreSQL database server.
+
+## Advantages of using PL/pgSQL
+
+PL/pgSQL wraps multiple statements in an object and store it on the PostgreSQL database server.
+So instead of sending multiple statements to the server one by one, you can send one statement to execute the object stored in the server. This allows you to:
+- Reduce the number of round trips between the application and the PostgreSQL database server.
+- Avoid transferring the immediate results between the application and the server.
+
+## PostgreSQL PL/pgSQL disadvantages
+
+Besides the advantages of using PL/pgSQL, there are some caveats:
+- Difficult to manage versions and hard to debug.
+- May not be portable to other database management systems.
