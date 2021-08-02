@@ -1,5 +1,5 @@
 # What is SQL and how use it?
-## idk
+## idk, but I have a desire to learn
 
 ## Prerequirements
 
