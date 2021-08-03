@@ -32,3 +32,25 @@ begin
     raise notice '% from %', from_test.name, from_test.city;
   end loop;
 end $$;
+
+-- loop to iterate over the result set of a dynamic query
+do $$
+declare
+  rec record;
+  sort_type smallint = 2;
+  query text;
+  rec_count int = 5;
+begin
+  query = 'select name, city from test ';
+  if sort_type = 1 then
+    query = query || 'order by id';
+  elsif sort_type = 2 then
+    query = query || 'order by name desc';
+  end if;
+  query = query || ' limit $1';
+
+  for rec in execute query using rec_count
+  loop
+    raise notice '% from %', rec.name, rec.city;
+  end loop;
+end $$;
