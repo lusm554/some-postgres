@@ -85,22 +85,3 @@ begin
   raise notice 'after x = %, y = %', x, y;
 end $$;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
