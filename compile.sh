@@ -1,13 +1,17 @@
 #!/bin/bash
 
-# RAW VERSION OF COMPILING SQL FILES
-#PGPASSWORD=lusm123
-#psql postgres -h 127.0.0.1 -d postgres -f test.sql
+db=learn
+if [ ! -z "$2" ]
+then
+  db=$2
+fi
+
+psql postgresql://postgres:lusm123@localhost/$db -c '\timing' -f $1
+
+: '
+# Compile without time excution 
+psql postgresql://postgres:lusm123@localhost/$db -f $1
+'
 
 # More about url connection 
 # https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING
-
-# Log time sql query
-#psql postgresql://postgres:lusm123@localhost/learn -c '\timing' -f $1
-
-psql postgresql://postgres:lusm123@localhost/learn -f $1
