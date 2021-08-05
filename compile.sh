@@ -6,7 +6,10 @@ then
   db=$2
 fi
 
-psql postgresql://postgres:lusm123@localhost/$db -c '\timing' -f $1
+psql postgresql://postgres:lusm123@localhost/$db \
+  -c '\timing' \
+  -c '\pset null [null]' \
+  -f $1
 
 : '
 # Compile without time excution 
