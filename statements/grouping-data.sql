@@ -40,3 +40,24 @@ from
   payment
 group by
   staff_id;
+
+-- GROUP BY with multiple columns
+select
+  customer_id,
+  staff_id,
+  sum(amount)
+from
+  payment
+group by
+  staff_id,
+  customer_id
+order by customer_id;
+
+-- GROUP BY clause with date column
+select
+  payment_date::date paid_date,
+  sum(amount) sum
+from 
+  payment
+group by
+  payment_date::date;
