@@ -61,3 +61,36 @@ from
   payment
 group by
   payment_date::date;
+
+-- HAVING clause
+select
+  customer_id,
+  sum(amount)
+from
+  payment
+group by 
+  customer_id
+having
+  customer_id % 2 = 0
+order by sum(amount)
+limit 10;
+
+select
+  customer_id,
+  sum(amount)
+from
+  payment
+group by
+  customer_id
+having
+  sum(amount) > 200;
+
+select
+  store_id,
+  count(customer_id)
+from
+  customer
+group by
+  store_id
+having
+  count(customer_id) > 300;
