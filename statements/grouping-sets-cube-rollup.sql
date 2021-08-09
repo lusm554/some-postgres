@@ -129,3 +129,32 @@ order by
   brand,
   segment;
 
+-- CUBE
+
+-- The following query uses the CUBE subclause to generate multiple grouping sets
+select
+  brand,
+  segment,
+  sum(quantity)
+from
+  sales
+group by
+  cube(brand, segment)
+order by
+  brand,
+  segment;
+
+-- The following query performs a partial cube:
+select
+  brand,
+  segment,
+  sum(quantity)
+from
+  sales
+group by
+  brand,
+  cube(segment)
+order by
+  brand,
+  segment;
+
