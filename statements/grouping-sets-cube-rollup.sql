@@ -158,3 +158,45 @@ order by
   brand,
   segment;
 
+-- ROLLUP
+
+-- The following query uses the ROLLUP clause to find the number of products sold by brand (subtotal) and by all brands and segments (total)
+select
+  brand,
+  segment,
+  sum(quantity)
+from
+  sales
+group by
+  rollup(brand, segment)
+order by 
+  brand,
+  segment;
+
+-- The following statement performs a partial roll-up
+select
+  segment,
+  brand,
+  sum(quantity)
+from
+  sales
+group by
+  segment,
+  rollup(brand)
+order by
+  segment,
+  brand;
+
+select
+  extract(year from rental_date) y,
+  extract(month from rental_date) m,
+  extract(day from rental_date) d,
+  count(rental_id)
+from
+  rental
+group by
+  rollup (
+    extract(year from rental_date),
+    extract(month from rental_date),
+    extract(day from rental_date)
+  );
