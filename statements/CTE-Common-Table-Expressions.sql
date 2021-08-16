@@ -57,6 +57,31 @@ select *
 from cte_film
 limit 10;
 
+with recursive subordinates as (
+  select
+    employee_id,
+    manager_id,
+    full_name
+  from
+    employees
+  where
+    employee_id = 2
+
+  union
+
+  select
+    e.employee_id,
+    e.manager_id,
+    e.full_name
+  from 
+    employees e
+  inner join subordinates s
+    on s.employee_id = e.manager_id 
+)
+select *
+from
+  subordinates;
+
 /* 
 The following are some advantages of using common table expressions or CTEs:
  - Improve the readability of complex queries. You use CTEs to organize complex queries in a more organized and readable manner.
