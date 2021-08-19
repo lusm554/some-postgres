@@ -11,7 +11,6 @@ values ('Alice', 10000);
 -- To make the change become visible to other sessions (or users) you need to commit the transaction by using the COMMIT WORK statement:
 commit; -- or commit work or commit transaction
 
-/*
 begin;
 
 update accounts
@@ -26,7 +25,6 @@ select id, name, balance
 from accounts;
 
 commit;
-*/
 
 insert into accounts (name, balance)
 values ('Jack', 0);
@@ -46,5 +44,4 @@ rollback; -- or rollback work or rollback transaction
 select *
 from
   accounts;
-
 
