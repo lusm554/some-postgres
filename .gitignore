@@ -1,4 +1,5 @@
 *.swp
 *.txt
+*.csv
 !./compile.sh
 compile.sh
