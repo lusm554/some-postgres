@@ -1,6 +1,6 @@
-drop table if exists publishers;
-drop table if exists categories;
-drop table if exists books;
+drop table if exists publishers cascade;
+drop table if exists categories cascade;
+drop table if exists books cascade;
 
 create table publishers (
   publisher_id serial primary key,
@@ -25,4 +25,18 @@ create table books (
   foreign key (category_id)
     references categories (category_id)
 );
+
+create view book_info
+as
+select
+  book_id,
+  title,
+  isbn,
+  published_date,
+  name
+from
+  books b
+inner join publishers
+  using(publisher_id)
+order by title;
 
