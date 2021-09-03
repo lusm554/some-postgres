@@ -13,7 +13,7 @@ psql postgresql://postgres:lusm123@localhost/$db \
 
 : '
 # Compile without time excution 
-psql postgresql://postgres:lusm123@localhost/$db -f $1
+psql postgresql://postgres:lusm123@localhost:5432/$db -f $1
 '
 
 # More about url connection 
